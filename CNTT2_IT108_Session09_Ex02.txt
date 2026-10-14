@@ -1,0 +1,27 @@
+Bài 2 : Kiểm tra tài liệu trước khi xuất bản
+## Phần 1. Phân tích lỗi cú pháp (3 lỗi)
+1. **Lỗi 1: Sai cú pháp chèn hình ảnh (Thiếu dấu `!`)**
+* **Chi tiết:** Đoạn mã viết `[Logo PTIT](https://ptit.edu.vn/logo.png)`.
+* **Giải thích:** Đây là cú pháp tạo link (liên kết), không phải cú pháp chèn ảnh. Kết quả render sẽ hiển thị dạng văn bản nhấp chuột được thay vì hình ảnh. Để chèn ảnh phải có dấu `!` ở đầu.
+
+2. **Lỗi 2: Sai cú pháp in đậm (Dùng dấu sao đơn `*` thay vì dấu sao đôi `**`)**
+* **Chi tiết:** Đoạn mã viết `* Tiêu đề 1` và `đây là đoạn văn bản in đậm.`.
+* **Giải thích:** Cú pháp `* ` (có khoảng trắng) tạo ra một danh sách gạch đầu dòng (bullet list), không phải văn bản in đậm. Trong Markdown, để in đậm phải dùng `**văn bản**`.
+
+3. **Lỗi 3: Vi phạm thứ tự phân cấp thẻ tiêu đề (Heading) và quy tắc H1 duy nhất**
+* **Chi tiết:** Thẻ H3 (`### Giới thiệu dự án`) xuất hiện trước thẻ H2 (`## Mục tiêu`). Ngoài ra, nếu coi `* Tiêu đề 1` là muốn làm H1 thì bị sai cú pháp
+* **Giải thích:** Cấu trúc phân cấp chuẩn của Markdown phải là $H1 \rightarrow H2 \rightarrow H3$. Việc nhảy cấp từ H3 rồi mới tới H2 làm sai cấu trúc logic tài liệu và chuẩn SEO.
+
+## Phần 2. Đoạn mã Markdown hoàn thiện (Sửa chuẩn)
+# Giới thiệu dự án
+![Logo PTIT](https://ptit.edu.vn/logo.png)
+**Đoạn văn bản này được in đậm đúng quy tắc.**
+## Mục tiêu
+* Quản lý sinh viên
+* Quản lý môn học
+
+**Giải thích mã đã sửa:**
+* `# Giới thiệu dự án`: Sử dụng **1 thẻ H1 duy nhất** đúng quy tắc.
+* `![Logo PTIT](...)`: Thêm dấu `!` ở trước để hiển thị hình ảnh.
+* `**...**`: Bọc văn bản bằng 2 dấu sao hai bên để in đậm đúng quy tắc.
+* `## Mục tiêu`: Dùng **H2** phân cấp đúng thứ tự sau **H1**.
